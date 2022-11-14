@@ -1,34 +1,15 @@
-<img width="1198" alt="스크린샷 2021-10-31 13 18 26" src="https://user-images.githubusercontent.com/49870977/139567417-ee7e3fdf-0014-46ed-8f0d-0a05ea06b8b1.png">
-
-### Evaluation : MAE(Mean Absolute Error)
-
-### Model Selection
-- KFold(15Fold)
-- LeaveOneOut
-
-#### < Leader Board >
-
-- 2021/10/19 = 0.21161
-- 2021/10/20 = 0.17558
-- 2021/10/21 = 0.17551
-- 2021/10/26 = 0.17498
-- 2021/10/27 = 0.17382
-- 2021/10/29 = 0.17208
-
-#### How To
-- species에 대해 target encoding(mean) 적용
-- sepal length, petal length에 대해 각각 cos, sin 적용 변수 추가 
-- 파생변수 없이 species에 대해 원-핫 인코딩만 추가
-- 15FOLD Ensemble(4models + one-hot encoding)
-- DNN + 4models Ensemble -> 0.17208(best)
+<img width="1195" alt="스크린샷 2021-12-15 11 48 52" src="https://user-images.githubusercontent.com/49870977/146113940-e710762b-93c4-4a12-9c8f-21c5166532ba.png">
 
 
-#### Result
+### Model Selection : RandomForest
 
-- Private Score : 0.17286(13th)
+### Leader Board
+- 2022/11/13 = 63.8279 (sub_1)
+- 2022/11/13 = 66.3881 (sub_2)
+- 2022/11/13 = 63.7371 (sub_3)
 
-#### Review
-- 데이터가 75개로 매우 적어 이를 적절히 활용한 파생변수 생성이 어려웠다.
-- 혹여 파생변수를 만든다 하더라도 과적합 발생 리스크가 있어 일반화된 모델 구성이 핵심이었던 것 같다.
-- 일반적인 ML에서 좋은 성능을 보이는 Boosting 계열이 해당 대회에서는 좋은 성능을 보장해주지는 못했다.
-- 하지만 재미있었다.
+### Review
+- 상관계수가 0.4를 초과하는 피쳐 중 중요도가 높은 2개, 3개, 4개를 모델 학습에 반영 
+- 중요도가 높은 4개를 반영하였을 때 가장 오차가 작게 도출됨
+- 그러나 중요도가 높은 피쳐 순대로 하나씩 증가시켜 학습에 반영시킨다고 해서 반드시 오차가 감소하는 것은 아니었다는 것을 배웠다. 중요도가 높은 3개를 반영했을 때(sub_2)보다 2개를 반영했을 때(sub_1) 오차가 더욱 감소하였기 때문이다.
+- RandomForest의 활용 및 피쳐 중요도를 고려한 모델 학습을 경험해본 점에서 유익했다.
