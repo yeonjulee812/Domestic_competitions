@@ -1,5 +1,3 @@
-# Domestic_competitions
-💻 국내 참가 대회 리뷰
 # Domestic_Competition
 
 ## 1. DACON
