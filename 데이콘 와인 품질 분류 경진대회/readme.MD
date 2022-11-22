@@ -1,6 +1,6 @@
 
 
-<img width="1195" src="file:///D:/Users/legra/Desktop/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202022-11-22%20223602.png">
+<img width="1195" src="/img/profile/badge-background.png">
 
 
 
